@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %} Login {% end %}
+
+{% block content %}
+	<form action="/login" method="post">
+		<label for="name">Login:</label> <input type="text" name="name">
+		<input type="submit" value="Sign in" />
+	</form>
+	<div style="clear: both;"></div>
+{% end %}

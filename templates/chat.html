@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %} Chat {% end %}
+
+{% block script %} 
+
+	if (window.MozWebSocket)
+	{
+		var ws = new MozWebSocket("ws://localhost:8666/chat");
+	}
+	else
+	{
+		var ws = new WebSocket("ws://localhost:8666/chat");
+	}
+	
+  	var user = "{{ user }}";
+		
+	ws.onopen = function() {};
+	ws.onmessage = function (evt) {
+		var chat = document.getElementById('chat');
+		var message = JSON.parse(evt.data);
+		chat.innerHTML += '<div class="message"><div class="author">'+message.author + ':</div><div class="body"> '+ message.body + '</div></div>';
+	};
+		
+	function send()
+	{
+		var element_text = document.getElementById('text');
+		var message = {'body': element_text.value, 'author': user};
+		element_text.value = '';
+		ws.send(JSON.stringify(message));
+
+	}
+	
+	document.onkeypress = function(event) {
+		if (event.charCode == 13) 
+		{
+			send();
+		}
+	}
+{% end %}
+		
+{% block content %}
+	<h1>Chat room</h1>
+	<a id="logout" href="/logout">Logout</a>
+	<div id="chat"></div>   
+		<form id="message_form" method="post">
+			<textarea id="text" name="text"></textarea><br/>
+			<input onclick="send();" type="button" value="Dodaj" />
+		</form>
+	</div>
+{% end %}

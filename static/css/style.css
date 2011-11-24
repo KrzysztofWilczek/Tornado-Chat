@@ -1,0 +1,84 @@
+body {
+	background-color: #eee;
+	font-family: Arial;
+}
+a:link, a:visited {
+	color: #ff6600;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+textarea {
+	border: 1px solid #d2d2d2;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	width: 300px;
+	height: 50px;
+	resize: none;
+}
+input[type=text] {
+	border: 1px solid #d2d2d2;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	width: 300px;
+	height: 23px;
+}
+input[type=button], input[type=submit] {
+	border: 1px solid #ff6600;
+	background-color: #ff6600;
+	color: #fff;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	float: right;
+	clear: both;
+}
+h1 {
+	font-size: 16px;
+	margin: 0px;
+}
+label {
+	float: left;
+}
+input[type=text] {
+	float: left;
+	clear: left;
+	
+}
+#content {
+	position: relative;
+	width: 300px;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+}
+
+.message {
+	border: 1px solid #ccc;
+	margin: 5px 0px 5px 0px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	padding: 5px;
+}
+.message .author {
+	font-size: 10px;
+	color: #999;
+}
+.message .body {
+
+}
+#logout {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	font-size: 10px;
+}

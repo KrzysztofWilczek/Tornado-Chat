@@ -1,0 +1,17 @@
+<html>
+   <head>
+   		<title>{% block title %} BETeam {% end %}</title>
+		<meta charset="utf-8">  
+		<link rel="stylesheet" media="screen" type="text/css" href="static/css/style.css" />
+    	<script>
+    	{% block script %} 
+    	{% end %}
+		</script>
+	</head>
+	<body>
+		<div id="content">
+			{% block content %}
+			{% end %}
+		</div>
+	</body>
+</html>
